@@ -1,0 +1,375 @@
+/* E-Learning Platform CSS */
+:root {
+  --el-bg: #0f172a;
+  --el-card: #1e293b;
+  --el-text: #f8fafc;
+  --el-muted: #94a3b8;
+  --el-primary: #3b82f6;
+  --el-primary-hover: #2563eb;
+  --el-green: #22c55e;
+  --el-border: #334155;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, sans-serif;
+}
+
+body {
+  background-color: var(--el-bg);
+  color: var(--el-text);
+}
+
+.el-app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.el-navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem 2rem;
+  background-color: #0f172a;
+  border-bottom: 1px solid var(--el-border);
+}
+
+.el-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.el-logo-badge {
+  font-size: 1.8rem;
+}
+
+.el-brand-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #60a5fa, #a855f7);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.el-global-stats {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.35rem;
+}
+
+.el-stat-pill {
+  font-size: 0.8rem;
+  color: var(--el-muted);
+}
+
+.el-stat-pill strong {
+  color: var(--el-green);
+  margin-left: 0.3rem;
+}
+
+.el-progress-bar-sm {
+  width: 180px;
+  height: 6px;
+  background-color: #334155;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.el-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #3b82f6, #22c55e);
+  transition: width 0.3s ease;
+}
+
+/* Main Content */
+.el-main-content {
+  flex: 1;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.el-hero {
+  margin-bottom: 2rem;
+}
+
+.el-hero h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.el-hero p {
+  color: var(--el-muted);
+  margin-top: 0.25rem;
+}
+
+/* Category Filters */
+.el-categories {
+  display: flex;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.el-cat-btn {
+  background: var(--el-card);
+  border: 1px solid var(--el-border);
+  color: var(--el-muted);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.el-cat-btn.active, .el-cat-btn:hover {
+  background-color: var(--el-primary);
+  color: white;
+  border-color: var(--el-primary);
+}
+
+/* Courses Grid */
+.el-courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 1.5rem;
+}
+
+.el-course-card {
+  background-color: var(--el-card);
+  border: 1px solid var(--el-border);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s, border-color 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.el-course-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--el-primary);
+}
+
+.el-course-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.el-course-badge {
+  font-size: 1.5rem;
+}
+
+.el-course-cat {
+  font-size: 0.75rem;
+  background-color: #334155;
+  padding: 0.2rem 0.5rem;
+  border-radius: 0.25rem;
+  color: #cbd5e1;
+}
+
+.el-course-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+}
+
+.el-course-instructor {
+  font-size: 0.8rem;
+  color: var(--el-primary);
+  margin-bottom: 0.75rem;
+}
+
+.el-course-desc {
+  font-size: 0.85rem;
+  color: var(--el-muted);
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+.el-course-footer {
+  margin-top: auto;
+}
+
+.el-prog-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--el-muted);
+  margin-bottom: 0.4rem;
+}
+
+.el-progress-track {
+  width: 100%;
+  height: 8px;
+  background-color: #334155;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+/* Detail View */
+.el-back-btn {
+  background: transparent;
+  border: 1px solid var(--el-border);
+  color: var(--el-text);
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+}
+
+.el-detail-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 900px) {
+  .el-detail-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.el-player-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.el-video-placeholder {
+  aspect-ratio: 16/9;
+  background-color: #020617;
+  border: 1px solid var(--el-border);
+  border-radius: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+}
+
+.el-play-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: var(--el-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  color: white;
+}
+
+.el-video-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.el-video-sub {
+  font-size: 0.8rem;
+  color: var(--el-muted);
+}
+
+.el-course-overview {
+  background-color: var(--el-card);
+  border: 1px solid var(--el-border);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+}
+
+.el-badge-title {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.el-overview-desc {
+  color: var(--el-muted);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Lessons Sidebar */
+.el-lessons-sidebar {
+  background-color: var(--el-card);
+  border: 1px solid var(--el-border);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.el-sidebar-header {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--el-border);
+  padding-bottom: 0.75rem;
+}
+
+.el-sidebar-header h3 {
+  font-size: 1.1rem;
+}
+
+.el-sidebar-header span {
+  font-size: 0.8rem;
+  color: var(--el-green);
+}
+
+.el-lessons-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.el-lesson-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  background-color: #0f172a;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+
+.el-lesson-item:hover, .el-lesson-item.active {
+  border-color: var(--el-primary);
+}
+
+.el-checkbox {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--el-green);
+  cursor: pointer;
+}
+
+.el-lesson-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.el-lesson-title {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.el-lesson-title.done {
+  text-decoration: line-through;
+  color: var(--el-muted);
+}
+
+.el-lesson-time {
+  font-size: 0.75rem;
+  color: var(--el-muted);
+}
